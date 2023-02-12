@@ -3,9 +3,7 @@ import com.kevinbooms.ToDoList;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.w3c.dom.ls.LSOutput;
 
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 
