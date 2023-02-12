@@ -12,6 +12,6 @@ public class App {
         System.out.println("Let's build Taskmin and finally finish it!\n");
 
         System.out.println(taskOne.getId() + ": " + taskOne.getDescription());
-        System.out.println(taskOne.toString());
+        System.out.println(taskOne);
     }
 }
