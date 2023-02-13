@@ -35,3 +35,36 @@ I'm building a Terminal based task list application. I want to be able to run th
 7. **From the main menu again**: If the user selects `(2) Load List`, the software will prompt the user to enter the file name of the list they wish to load.
 	- if the file name the user entered is found it will load the list and populate the tasks.
 	- the user will then be shown the list control view with their pre-made list of tasks.
+	
+## Task Class  
+This will represent a single "To Do." It has an Id and a Description. Tasks will be compiled in a list List of Tasks.  
+*future implementations may include a due date, and a status of a task*
+```
+public class Task {
+	private int id;
+	private String description;
+	+constructors 
+	+getters
+	+setters
+	+toString
+}
+```
+
+## ToDoList Class
+Here is the actual Task List Class. From here users will have their tasks shown to them as well as options to manipulate tasks and save list data for later use. When exiting this view for the main menu the list must clear itself, so if a new list is created at the main menu the current one is erased.
+```
+public class ToDoList {
+	private String title;
+	private List<Task> tasks = new ArrayList<>();
+	+constructor
+	+getters
+	+setters
+	+add task
+	+edit task
+	+remove task
+	+change title
+}
+```
+
+## CommandLine Class
+This class will handle taking in user input and displaying output
