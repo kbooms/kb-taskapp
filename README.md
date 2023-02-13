@@ -67,4 +67,14 @@ public class ToDoList {
 ```
 
 ## CommandLine Class
-This class will handle taking in user input and displaying output
+This class will handle taking in user input and displaying output. It uses a Scanner class to handle keyboard inputs, and contains pre-defined methods for displaying output such as a Banner, Command menus, List views, and Input prompts.
+```
+public class CommandLine {
+	private final Scanner scanner = new Scanner(System.in);
+	+display banner
+	+display main menu
+	+display list menu
+	+prompt for menu selection
+	+prompt for integer
+}
+```
