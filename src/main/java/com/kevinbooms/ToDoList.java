@@ -8,6 +8,8 @@ import java.util.List;
 public class ToDoList {
 
     private String title;
+    // need to create a sequence to generate id's
+    private int idGenerator;
     private List<Task> tasks = new ArrayList<>();
 
     public ToDoList(){}
