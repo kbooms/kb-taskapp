@@ -4,10 +4,16 @@ All notable changes to this to this project will be documented in this file.
 #### 2/12/23
 - Wrote Task class
 	+ uses only an Id and a Description
-	+ ommitted a Due Date and a Status propertie for now
+	+ ommitted a Due Date and a Status property for now
 - Wrote TaskTests
-	+ tests Getters and Setters
+	+ added test for the id getter
+	+ added test for the description getter
+	+ added test for the description setter
 - Wrote ToDoList class
+	+ addded title property
+	+ added List of Task objects propery as blank list
+	+ constructor is parameterless for the time being
+		* might need to add loaded constructor when handling files
 	+ need to implement tests
 
 ---
