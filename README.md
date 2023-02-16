@@ -78,3 +78,13 @@ public class CommandLine {
 	+prompt for integer
 }
 ```
+
+## FileManager Class
+This class will handle the opening and saving of Lists into the editor. The files will be saved as .txt files.
+```
+public class FileManager {
+	private String fileName
+	+loadFile
+	+saveFile
+}
+``` 
