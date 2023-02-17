@@ -13,12 +13,11 @@ public class ToDoList {
     private List<Task> tasks = new ArrayList<>();
 
     public ToDoList(){}
-    // not sure I need a parameterized constructor yet.
-    // If I'm creating a new ToDoList object, it should be allowed to be blank
-//    public ToDoList(String title, List<Task> tasks) {
-//        this.title = title;
+
+    public ToDoList(String title) {
+        this.title = title;
 //        this.tasks = tasks;
-//    }
+    }
     public String getTitle() {
         return title;
     }

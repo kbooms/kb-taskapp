@@ -10,6 +10,14 @@ public class TaskTests {
     Task sutTaskThree = new Task (3, "Test Task 3, bruh");
 
     @Test
+    public void loaded_constructor_receives_parameters() {
+        int id = 0;
+        String description = "Be sure to take out the trash";
+        Task sutTask = new Task(id, description);
+        Assert.assertEquals(id, sutTask.getId());
+        Assert.assertEquals(description, sutTask.getDescription());
+    }
+    @Test
     public void get_id_returns_id() {
         Assert.assertEquals(1, sutTaskOne.getId());
         Assert.assertEquals(2, sutTaskTwo.getId());
