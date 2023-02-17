@@ -1,6 +1,18 @@
-# Taskmin Changelog
-All notable changes to this to this project will be documented in this file.
-
+# Taskmin Devlog/Changelog
+All notable changes to this to this project will be documented in this file.  
+## 2/17/2023
+### Added
+- Test Cases for ToDoList
+	+ default constructor returns blank
+	+ parameterized constructor receives parameters
+	+ `addTask()` adds a `Task` to the `ToDoList`
+	+ `removeTask()` removes a `Task` from the `ToDoList`
+- Added test case to Task that tests the constructor
+  
+### Removed
+- Removed List as a parameter from the parameterized constructor
+	+ The ToDoList will be populated by the user upon instantiation
+***
 ## 2/16/2023
 Had a chance to manually test the list constructor and play with the output.
 
