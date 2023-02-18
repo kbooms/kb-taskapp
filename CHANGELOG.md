@@ -1,5 +1,15 @@
 # Taskmin Devlog/Changelog
 All notable changes to this to this project will be documented in this file.  
+## 2/18/2023
+### Added
+- `CommandLine` class
+- `CommandLineTests` class
+- Wrote basic greeting method to test manually in `App` class
+- Wrote test to verify greeting hasn't changed
+- Added a text banner display method
+- Method to display main menu
+- Method to display list menu
+
 ## 2/17/2023
 ### Added
 - Test Cases for ToDoList
