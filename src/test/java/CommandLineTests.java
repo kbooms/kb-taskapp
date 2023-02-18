@@ -1,6 +1,8 @@
 import com.kevinbooms.CommandLine;
+
 import org.junit.Assert;
 import org.junit.Test;
+
 
 public class CommandLineTests {
 
