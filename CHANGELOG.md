@@ -9,7 +9,11 @@ All notable changes to this to this project will be documented in this file.
 - Added a text banner display method
 - Method to display main menu
 - Method to display list menu
-
+- Added `App` constructor with Command Line
+- Added basic `run()` method
+	+ setting up to structure app runtime
+  
+***
 ## 2/17/2023
 ### Added
 - Test Cases for ToDoList

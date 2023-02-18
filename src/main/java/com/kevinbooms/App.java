@@ -4,16 +4,25 @@ import com.kevinbooms.Task;
 
 public class App {
 
+    private CommandLine console;
+
+    public App(CommandLine console) {
+        this.console = console;
+    }
+
+    public void run() {
+        console.displayBanner();
+    }
     public static void main(String[] args) {
+
 
         System.out.println("Let's build Taskmin and finally finish it!\n");
 
         CommandLine cl = new CommandLine();
+        App app = new App(cl);
+        app.run();
         System.out.println(cl.printGreeting());
-        cl.displayBanner();
-        cl.displayMainMenu();
-        System.out.println("*** List menu sample ***");
-        cl.displayListMenu();
+
 
         // *** manually testing Task and ToDoList class ***
 //        Task taskOne = new Task(1, "The first task");
