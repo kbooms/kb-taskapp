@@ -1,27 +1,36 @@
 package com.kevinbooms;
 
-import com.kevinbooms.Task;
-
 public class App {
 
-    private CommandLine console;
+    private static final String MAIN_MENU_NEWLIST = "Create New List";
+    private static final String MAIN_MENU_LOADLIST = "Load List (not implemented)";
+    private static final String MAIN_MENU_HELP = "Help";
+    private static final String MAIN_MENU_EXIT = "Exit";
 
-    public App(CommandLine console) {
+    private static final String[] MAIN_MENU_OPTIONS = { MAIN_MENU_NEWLIST,
+                                                        MAIN_MENU_LOADLIST,
+                                                        MAIN_MENU_HELP,
+                                                        MAIN_MENU_EXIT };
+
+    private CommandLine console;
+    private ToDoList toDoList;
+
+    public App(CommandLine console, ToDoList toDoList) {
         this.console = console;
+        this.toDoList = toDoList;
     }
 
     public void run() {
         console.displayBanner();
     }
+
     public static void main(String[] args) {
 
-
-        System.out.println("Let's build Taskmin and finally finish it!\n");
-
-        CommandLine cl = new CommandLine();
-        App app = new App(cl);
+        CommandLine console = new CommandLine(System.in, System.out);
+        ToDoList toDoList = new ToDoList();
+        App app = new App(console, toDoList);
         app.run();
-        System.out.println(cl.printGreeting());
+        System.out.println(console.printGreeting());
 
 
         // *** manually testing Task and ToDoList class ***
