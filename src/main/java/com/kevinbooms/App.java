@@ -13,25 +13,17 @@ public class App {
                                                         MAIN_MENU_LOADLIST,
                                                         MAIN_MENU_HELP,
                                                         MAIN_MENU_EXIT };
-
     private CommandLine console;
-    private ToDoList toDoList;
 
-    public App(CommandLine console, ToDoList toDoList) {
+    public App(CommandLine console) {
         this.console = console;
-        this.toDoList = toDoList;
     }
-
-//    public void displayMainMenu() {
-//        for (int i = 0; i < MAIN_MENU_OPTIONS.length; i++) {
-//            System.out.println(MAIN_MENU_OPTIONS[i]);
-//        }
-//    }
 
     public void run() {
         console.displayBanner();
 
         while (true) { // begin main while loop
+            //
             String choice = String.valueOf(console.getChoiceFromOptions(MAIN_MENU_OPTIONS));
 
             switch (choice) {
@@ -59,7 +51,7 @@ public class App {
 
         CommandLine console = new CommandLine(System.in, System.out);
         ToDoList toDoList = new ToDoList();
-        App app = new App(console, toDoList);
+        App app = new App(console);
         app.run();
 //        System.out.println(console.printGreeting());
 

@@ -21,7 +21,7 @@ public class CommandLine {
         System.out.println("  _/    _/    _/  _/_/      _/_/      _/    _/    _/  _/  _/    _/   ");
         System.out.println(" _/    _/    _/      _/_/  _/  _/    _/    _/    _/  _/  _/    _/    ");
         System.out.println("_/      _/_/_/  _/_/_/    _/    _/  _/    _/    _/  _/  _/    _/     ");
-        System.out.println("A lightweight rapid-fire task manager!");
+        System.out.println("    A lightweight rapid-fire task manager!");
     }
 
     public String printGreeting() {
@@ -50,10 +50,11 @@ public class CommandLine {
         }
         if (choice == null) {
             out.println(System.lineSeparator() + "!! " + userInput +
-                    "is not a valid option." + System.lineSeparator());
+                    " is not a valid option." + System.lineSeparator());
         }
         return choice;
     }
+
     private void displayMenuOptions(Object[] options) {
         out.println();
         for (int i = 0; i < options.length; i++) {
@@ -63,48 +64,4 @@ public class CommandLine {
         out.print("\r\nPlease choose an option: ");
         out.flush();
     }
-
-//    public void displayMainMenu() {
-//        System.out.println("1: Create New List");
-//        System.out.println("2: Load List");
-//        System.out.println("3: Help");
-//        System.out.println("0: Exit");
-//    }
-//
-//    public void displayListMenu() {
-//        System.out.println("1: Add Task");
-//        System.out.println("2: Remove Task");
-//        System.out.println("3: Change Title");
-//        System.out.println("4: Save List");
-//        System.out.println("0: Exit (Go Back)");
-//    }
-//
-//    public int promptForMenuSelection(String prompt) {
-//
-//        int menuSelection;
-//        System.out.println(prompt);
-//        try {
-//            menuSelection = Integer.parseInt(scanner.nextLine());
-//        } catch (NumberFormatException e) {
-//            menuSelection = -1;
-//        }
-//        return menuSelection;
-//    }
-//
-//    public String promptForString(String prompt) {
-//        System.out.println(prompt);
-//        return scanner.nextLine();
-//    }
-//
-//    public int promptForTaskIndex(String prompt) {
-//
-//        int userChoice;
-//        System.out.println(prompt);
-//        try {
-//            userChoice = Integer.parseInt(scanner.nextLine());
-//        } catch (IndexOutOfBoundsException i) {
-//            userChoice = -1;
-//        }
-//        return userChoice;
-//    }
 }
