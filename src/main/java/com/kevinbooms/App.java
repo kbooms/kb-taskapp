@@ -1,5 +1,7 @@
 package com.kevinbooms;
 
+import static java.lang.System.exit;
+
 public class App {
 
     private static final String MAIN_MENU_NEWLIST = "Create New List";
@@ -20,8 +22,37 @@ public class App {
         this.toDoList = toDoList;
     }
 
+//    public void displayMainMenu() {
+//        for (int i = 0; i < MAIN_MENU_OPTIONS.length; i++) {
+//            System.out.println(MAIN_MENU_OPTIONS[i]);
+//        }
+//    }
+
     public void run() {
         console.displayBanner();
+
+        while (true) { // begin main while loop
+            String choice = String.valueOf(console.getChoiceFromOptions(MAIN_MENU_OPTIONS));
+
+            switch (choice) {
+                case MAIN_MENU_NEWLIST -> {
+                    System.out.println("CREATE NEW LIST");
+                }
+                case MAIN_MENU_LOADLIST -> {
+                    System.out.println("LOAD A LIST");
+                }
+                case MAIN_MENU_HELP -> {
+                    System.out.println("*** HELP MENU ***");
+                }
+                case MAIN_MENU_EXIT -> {
+                    System.out.println("*** EXIT ***");
+                    exit(0);
+                }
+                default -> {
+                    System.out.println("*** not a valid option ***");
+                }
+            }
+        } // end main while loop
     }
 
     public static void main(String[] args) {
@@ -30,7 +61,7 @@ public class App {
         ToDoList toDoList = new ToDoList();
         App app = new App(console, toDoList);
         app.run();
-        System.out.println(console.printGreeting());
+//        System.out.println(console.printGreeting());
 
 
         // *** manually testing Task and ToDoList class ***

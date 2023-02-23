@@ -21,7 +21,7 @@ public class CommandLine {
         System.out.println("  _/    _/    _/  _/_/      _/_/      _/    _/    _/  _/  _/    _/   ");
         System.out.println(" _/    _/    _/      _/_/  _/  _/    _/    _/    _/  _/  _/    _/    ");
         System.out.println("_/      _/_/_/  _/_/_/    _/    _/  _/    _/    _/  _/  _/    _/     ");
-        System.out.println();
+        System.out.println("A lightweight rapid-fire task manager!");
     }
 
     public String printGreeting() {
@@ -58,9 +58,9 @@ public class CommandLine {
         out.println();
         for (int i = 0; i < options.length; i++) {
             int optionNum = i + 1;
-            out.println(" " + optionNum + ": " + options[1]);
+            out.println(" " + optionNum + ": " + options[i]);
         }
-        out.print(System.lineSeparator() + "\r\nPlease choose an option: ");
+        out.print("\r\nPlease choose an option: ");
         out.flush();
     }
 
