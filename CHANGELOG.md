@@ -1,6 +1,24 @@
 # Taskmin Devlog/Changelog
 All notable changes to this to this project will be documented in this file.  
-## 2/18/2023
+## 2/23/2023
+### Added
+- Menu options array to App
+- Main run sequence (while loop, switch statement)
+- Changed `displayBanner()`, added tagline
+- Changed `ToDoList` constructor to accept list again
+  
+### Removed
+- Broke some tests, fine for now
+	+ Planning fix in future update
+- Rewrote `CommandLine` class structure
+#### Todo
+- Implement List handler methods for `ToDoList` class
+	+ `run` method needs to be written
+	+ Help section
+- `FileManager` class future implement
+	 
+
+## 2/18/2023 
 ### Added
 - `CommandLine` class
 - `CommandLineTests` class

@@ -25,9 +25,9 @@ public class ToDoList {
 
     public ToDoList(){}
 
-    public ToDoList(String title) {
+    public ToDoList(String title, List<Task> tasks) {
         this.title = title;
-//        this.tasks = tasks;
+        this.tasks = tasks;
     }
 
     public String getTitle() {
@@ -42,6 +42,9 @@ public class ToDoList {
         return tasks;
     }
 
+    public void run() {
+
+    }
     public void showList() {
         System.out.println("-------------------------");
         System.out.println("| EXAMPLE LIST           ");

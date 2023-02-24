@@ -18,14 +18,14 @@ public class ToDoListTests {
     public void loaded_constructor_receives_parameters() {
         String title = "OOOOOOOOOOH, Laa-lalaaaaaaaa";
         List<Task> tasks = List.of();
-        ToDoList list = new ToDoList(title);
+        ToDoList list = new ToDoList(title, tasks);
         Assert.assertEquals(title, list.getTitle());
         Assert.assertEquals(tasks, list.getTasks());
     }
 
     @Test
     public void addTask_adds_Task_to_List() {
-        ToDoList sutList = new ToDoList("Yuyuyuyiyi-yi-yiyiyi-yiyiyi-oh-hohohoho");
+        ToDoList sutList = new ToDoList("Yuyuyuyiyi-yi-yiyiyi-yiyiyi-oh-hohohoho", List.of());
         Task sutTask = new Task(0, "Lalalala-la-lalala-lalala-whohohoho!");
         sutList.addTask(sutTask);
         Assert.assertEquals(List.of(sutTask), sutList.getTasks());
@@ -34,8 +34,8 @@ public class ToDoListTests {
     @Test
     public void removeTask_removes_Task_from_List() {
         Task sutTask = new Task(0, "Hahahahahahahahaha");
-        ToDoList sutList = new ToDoList("Lolololololololol");
-        sutList.addTask(sutTask);
+        ToDoList sutList = new ToDoList("Lolololololololol", List.of(sutTask));
+//        sutList.addTask(sutTask);
         Assert.assertEquals(List.of(sutTask), sutList.getTasks());
         sutList.removeTask(sutTask);
         Assert.assertTrue(sutList.getTasks().isEmpty());

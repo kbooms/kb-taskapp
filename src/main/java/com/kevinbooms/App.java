@@ -23,9 +23,13 @@ public class App {
         console.displayBanner();
 
         while (true) { // begin main while loop
-            //
+            /*  User must make a choice. The choices are presented as an array.
+            *   Utilizing the command line, and its method getChoice, the user
+            *   is shown the available options and prompted to respond.
+            * */
             String choice = String.valueOf(console.getChoiceFromOptions(MAIN_MENU_OPTIONS));
 
+            //  Based on the user's input, one of several actions will be performed
             switch (choice) {
                 case MAIN_MENU_NEWLIST -> {
                     System.out.println("CREATE NEW LIST");
