@@ -1,5 +1,23 @@
 # Taskmin Devlog/Changelog
 All notable changes to this to this project will be documented in this file.  
+
+## 2/25/2023
+### Added
+- `promptForString` method to `CommandLine` class
+- surrounded `app.run()` in try catch block
+	+ error came up with InterruptionException
+- `run()` method to `ToDoList` class
+	+ instantiates it's own `CommandLine`
+	+ redisplays banner
+	+ displays the tasklist (not fully written yet)
+
+#### ToDo
+- continue writing `ToDoList` run method
+- `FileManager` and Help section
+
+#### Notes
+List options are not currently being displayed, prompt still holds for user input. Currently exits method when anything is entered and goes back to main switch loop.
+
 ## 2/23/2023
 ### Added
 - Menu options array to App

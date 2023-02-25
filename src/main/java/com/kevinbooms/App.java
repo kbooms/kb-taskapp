@@ -1,5 +1,8 @@
 package com.kevinbooms;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.lang.System.exit;
 
 public class App {
@@ -19,7 +22,7 @@ public class App {
         this.console = console;
     }
 
-    public void run() {
+    public void run() throws InterruptedException {
         console.displayBanner();
 
         while (true) { // begin main while loop
@@ -32,7 +35,12 @@ public class App {
             //  Based on the user's input, one of several actions will be performed
             switch (choice) {
                 case MAIN_MENU_NEWLIST -> {
-                    System.out.println("CREATE NEW LIST");
+                    System.out.println("Set a title for the list?");
+                    String title = console.promptForString();
+                    List<Task> tasks = new ArrayList<>();
+                    ToDoList toDoList = new ToDoList(title, tasks);
+                    toDoList.run();
+
                 }
                 case MAIN_MENU_LOADLIST -> {
                     System.out.println("LOAD A LIST");
@@ -54,9 +62,12 @@ public class App {
     public static void main(String[] args) {
 
         CommandLine console = new CommandLine(System.in, System.out);
-        ToDoList toDoList = new ToDoList();
         App app = new App(console);
-        app.run();
+        try {
+            app.run();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 //        System.out.println(console.printGreeting());
 
 

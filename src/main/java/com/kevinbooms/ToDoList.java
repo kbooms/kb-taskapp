@@ -43,11 +43,21 @@ public class ToDoList {
     }
 
     public void run() {
+        while (true) { // begin list manager loop
+            CommandLine listConsole = new CommandLine(System.in, System.out);
+            // show the banner
+            listConsole.displayBanner();
+            // show the list
+            showList();
+            // get a choice from user, use LIST_MENU_OPTIONS
+            String action = String.valueOf(listConsole.getChoiceFromUserInput(LIST_MENU_OPTIONS));
+            //should hang up from here
 
+        } // end list manager loop
     }
-    public void showList() {
+    private void showList() {
         System.out.println("-------------------------");
-        System.out.println("| EXAMPLE LIST           ");
+        System.out.println("| " + getTitle());
         System.out.println("-------------------------");
         System.out.println("1) Task 1");
         System.out.println("2) Task 2");

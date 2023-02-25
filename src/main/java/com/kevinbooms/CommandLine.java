@@ -21,7 +21,7 @@ public class CommandLine {
         System.out.println("  _/    _/    _/  _/_/      _/_/      _/    _/    _/  _/  _/    _/   ");
         System.out.println(" _/    _/    _/      _/_/  _/  _/    _/    _/    _/  _/  _/    _/    ");
         System.out.println("_/      _/_/_/  _/_/_/    _/    _/  _/    _/    _/  _/  _/    _/     ");
-        System.out.println("    A lightweight rapid-fire task manager!");
+        System.out.println("    A lightweight rapid-fire task manager                        v0.5");
     }
 
     public String printGreeting() {
@@ -63,5 +63,9 @@ public class CommandLine {
         }
         out.print("\r\nPlease choose an option: ");
         out.flush();
+    }
+
+    public String promptForString() {
+        return in.nextLine();
     }
 }
