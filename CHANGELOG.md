@@ -1,6 +1,15 @@
 # Taskmin Devlog/Changelog
 All notable changes to this to this project will be documented in this file.  
-
+## 2/26/2023
+### Added
+- Application run sequence reactivated
+  
+### Removed
+- id field from Task, for this app Id numbers will not be needed
+- Testing field in main app for id generator sequence
+### Notes
+Tried writing a sequence to generate ids, got a rough one working, ultimately decided id's were not necessary at this time. It's a simple tasklist application, and I can number each one on the list with a For loop. The task and ToDoList tests are broken now, I'll rewrite them later. I'm focusing on making the application work how I need it to.
+  
 ## 2/25/2023
 ### Added
 - `promptForString` method to `CommandLine` class
