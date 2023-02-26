@@ -10,7 +10,7 @@ public class ToDoList {
     private static final String LIST_MENU_ADD_TASK = "Add Task";
     private static final String LIST_MENU_REMOVE_TASK = "Remove Task";
     private static final String LIST_MENU_CHANGE_TITLE = "Change Title";
-    private static final String LIST_MENU_SAVE_LIST = "Save List";
+    private static final String LIST_MENU_SAVE_LIST = "Save List (not implemented)";
     private static final String LIST_MENU_EXIT = "Exit";
     private static final String[] LIST_MENU_OPTIONS = { LIST_MENU_ADD_TASK,
                                                         LIST_MENU_REMOVE_TASK,
@@ -50,8 +50,25 @@ public class ToDoList {
             // show the list
             showList();
             // get a choice from user, use LIST_MENU_OPTIONS
-            String action = String.valueOf(listConsole.getChoiceFromUserInput(LIST_MENU_OPTIONS));
-            //should hang up from here
+            String action = String.valueOf(listConsole.getChoiceFromOptions(LIST_MENU_OPTIONS));
+            // list handler methods
+            switch (action) {
+                case LIST_MENU_ADD_TASK -> {
+                    System.out.println("*** ADD A TASK ***");
+                }
+                case LIST_MENU_REMOVE_TASK -> {
+                    System.out.println("*** REMOVE A TASK ***");
+                }
+                case LIST_MENU_CHANGE_TITLE -> {
+                    System.out.println("*** CHANGE TITLE ***");
+                }
+                case LIST_MENU_SAVE_LIST -> {
+                    System.out.println("*** SAVE LIST ***");
+                }
+                case LIST_MENU_EXIT -> {
+                    return;
+                }
+            }
 
         } // end list manager loop
     }
