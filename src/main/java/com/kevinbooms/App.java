@@ -61,15 +61,22 @@ public class App {
 
     public static void main(String[] args) {
 
-        CommandLine console = new CommandLine(System.in, System.out);
-        App app = new App(console);
-        try {
-            app.run();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-//        System.out.println(console.printGreeting());
+//        CommandLine console = new CommandLine(System.in, System.out);
+//        App app = new App(console);
+//        try {
+//            app.run();
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
 
+        // *** designing and testing an id generator sequence
+        List<Task> tasks = new ArrayList<>();
+        ToDoList list = new ToDoList("test", tasks);
+        int idGen = tasks.size() + 1;
+        Task task = new Task(idGen, "testing id generator");
+        list.addTask(task);
+        System.out.println(list.getTasks());
+//        System.out.println(console.printGreeting());
 
         // *** manually testing Task and ToDoList class ***
 //        Task taskOne = new Task(1, "The first task");

@@ -43,8 +43,8 @@ public class ToDoList {
     }
 
     public void run() {
+        CommandLine listConsole = new CommandLine(System.in, System.out);
         while (true) { // begin list manager loop
-            CommandLine listConsole = new CommandLine(System.in, System.out);
             // show the banner
             listConsole.displayBanner();
             // show the list
@@ -55,18 +55,30 @@ public class ToDoList {
             switch (action) {
                 case LIST_MENU_ADD_TASK -> {
                     System.out.println("*** ADD A TASK ***");
+                    // Prompt the user to enter an id, need to write an ID gen sequence
+                    // Prompt the user to write out the task
+                    // Create a new Task object with the id and description
+                    // Add task to the list
+                    // Should return to the top loop from here
                 }
                 case LIST_MENU_REMOVE_TASK -> {
                     System.out.println("*** REMOVE A TASK ***");
+                    // Prompt the user to enter a task id
+                    // Remove task with id matching user input from list
+                    // Should return to the top loop from here
                 }
                 case LIST_MENU_CHANGE_TITLE -> {
                     System.out.println("*** CHANGE TITLE ***");
+                    // Prompt the user to enter a new title for the list
+                    // use the setter to change the title of the list
+                    // should return to the top loop from here
                 }
                 case LIST_MENU_SAVE_LIST -> {
                     System.out.println("*** SAVE LIST ***");
+                    // to be implemented once FileManager class is in place
                 }
                 case LIST_MENU_EXIT -> {
-                    return;
+                    return; // return user to main menu
                 }
             }
 
