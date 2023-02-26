@@ -54,8 +54,7 @@ public class ToDoList {
             // list handler methods
             switch (action) {
                 case LIST_MENU_ADD_TASK -> {
-                    System.out.println("*** ADD A TASK ***");
-                    // Prompt the user to enter an id, need to write an ID gen sequence
+                    System.out.println("\n*** ADD A TASK ***\n");
                     // Prompt the user to write out the task
                     // Create a new Task object with the id and description
                     // Add task to the list
@@ -86,10 +85,11 @@ public class ToDoList {
     }
     private void showList() {
         System.out.println("-------------------------");
-        System.out.println("| " + getTitle());
+        System.out.println("| " + tasks.size() + " | " + getTitle());
         System.out.println("-------------------------");
-        System.out.println("1) Task 1");
-        System.out.println("2) Task 2");
+        for (Task task : tasks) {
+            System.out.println(tasks.indexOf(task) + ") " + task.getDescription());
+        }
 
     }
 
