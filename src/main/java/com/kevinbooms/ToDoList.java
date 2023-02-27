@@ -19,8 +19,6 @@ public class ToDoList {
                                                         LIST_MENU_EXIT};
 
     private String title;
-    // need to create a sequence to generate id's
-//    private int idGenerator;
     private List<Task> tasks = new ArrayList<>();
 
     public ToDoList(){}
@@ -56,14 +54,18 @@ public class ToDoList {
                 case LIST_MENU_ADD_TASK -> {
                     System.out.println("\n*** ADD A TASK ***\n");
                     // Prompt the user to write out the task
+                    String description = listConsole.promptForString("Please describe the task");
                     // Create a new Task object with the id and description
+                    Task task = new Task(description);
                     // Add task to the list
+                    tasks.add(task);
                     // Should return to the top loop from here
                 }
                 case LIST_MENU_REMOVE_TASK -> {
                     System.out.println("*** REMOVE A TASK ***");
                     // Prompt the user to enter a task id
-                    // Remove task with id matching user input from list
+                    // Remove task with id matching user input, from list
+                    tasks.remove(listConsole.promptForInteger("Which # task to delete?"));
                     // Should return to the top loop from here
                 }
                 case LIST_MENU_CHANGE_TITLE -> {
@@ -88,15 +90,8 @@ public class ToDoList {
         System.out.println("| " + tasks.size() + " | " + getTitle());
         System.out.println("-------------------------");
         for (Task task : tasks) {
-            System.out.println(tasks.indexOf(task) + ") " + task.getDescription());
+            System.out.println((tasks.indexOf(task) + 1) + ") " + task.getDescription());
         }
 
-    }
-
-    public void addTask(Task task) {
-        tasks.add(task);
-    }
-    public void removeTask(Task task) {
-        tasks.remove(task);
     }
 }

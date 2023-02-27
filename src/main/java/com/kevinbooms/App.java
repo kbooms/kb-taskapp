@@ -35,8 +35,8 @@ public class App {
             //  Based on the user's input, one of several actions will be performed
             switch (choice) {
                 case MAIN_MENU_NEWLIST -> { // a new list is created
-                    System.out.println("Set a title for the list?");
-                    String title = console.promptForString();
+                    System.out.println();
+                    String title = console.promptForString("Set a title for the list?");
                     List<Task> tasks = new ArrayList<>();
                     ToDoList toDoList = new ToDoList(title, tasks);
                     toDoList.run();

@@ -65,7 +65,20 @@ public class CommandLine {
         out.flush();
     }
 
-    public String promptForString() {
+    public String promptForString(String prompt) {
+        System.out.println(prompt);
         return in.nextLine();
+    }
+
+    public int promptForInteger(String prompt) {
+        System.out.println(prompt);
+        int index;
+        try {
+            index = (Integer.parseInt(in.nextLine()) -1);
+        } catch (IndexOutOfBoundsException i) {
+            System.out.println("Task not found...");
+            index = -1;
+        }
+        return index;
     }
 }
