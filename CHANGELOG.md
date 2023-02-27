@@ -1,5 +1,18 @@
 # Taskmin Devlog/Changelog
 All notable changes to this to this project will be documented in this file.  
+## 2/27/2023
+### Added
+- Add a task option successfully added
+	+ numbers tasks on list as well
+- Remove a task added, however
+	+ throws an `IndexOutOfBoundsException`
+### Removed
+- old `addTask()` method, not needed, see Notes section
+- old `removeTask()` method, not needed, see Notes section
+- deleted some old concept code that was commented out
+### Notes  
+The adding and removing of tasks is handled inside of a switch-case statement, which is inside a while loop running on (true). To exit this function the user must input the option correlating with it (5). This will return out of the loop and send the user back to the main loop in the `App` class  
+***
 ## 2/26/2023
 ### Added
 - Application run sequence reactivated
@@ -10,6 +23,7 @@ All notable changes to this to this project will be documented in this file.
 ### Notes
 Tried writing a sequence to generate ids, got a rough one working, ultimately decided id's were not necessary at this time. It's a simple tasklist application, and I can number each one on the list with a For loop. The task and ToDoList tests are broken now, I'll rewrite them later. I'm focusing on making the application work how I need it to.
   
+---
 ## 2/25/2023
 ### Added
 - `promptForString` method to `CommandLine` class
@@ -26,7 +40,8 @@ Tried writing a sequence to generate ids, got a rough one working, ultimately de
 
 #### Notes
 List options are not currently being displayed, prompt still holds for user input. Currently exits method when anything is entered and goes back to main switch loop.
-
+  
+---
 ## 2/23/2023
 ### Added
 - Menu options array to App
@@ -43,8 +58,8 @@ List options are not currently being displayed, prompt still holds for user inpu
 	+ `run` method needs to be written
 	+ Help section
 - `FileManager` class future implement
-	 
-
+   
+---
 ## 2/18/2023 
 ### Added
 - `CommandLine` class
