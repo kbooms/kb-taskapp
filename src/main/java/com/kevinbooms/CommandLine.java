@@ -24,9 +24,9 @@ public class CommandLine {
         System.out.println("    A lightweight rapid-fire task manager                        v0.5");
     }
 
-    public String printGreeting() {
-        return "Checking in!";
-    }
+//    public String printGreeting() {
+//        return "Checking in!";
+//    }
 
     public Object getChoiceFromOptions(Object[] options) {
         Object choice = null;
@@ -75,9 +75,9 @@ public class CommandLine {
         int index;
         try {
             index = (Integer.parseInt(in.nextLine()) -1);
-        } catch (IndexOutOfBoundsException i) {
-            System.out.println("Task not found...");
-            index = -1;
+        } catch (NumberFormatException n) {
+            System.out.println("not a number");
+            index = -2;
         }
         return index;
     }

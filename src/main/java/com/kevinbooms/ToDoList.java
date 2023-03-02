@@ -62,10 +62,25 @@ public class ToDoList {
                     // Should return to the top loop from here
                 }
                 case LIST_MENU_REMOVE_TASK -> {
-                    System.out.println("*** REMOVE A TASK ***");
-                    // Prompt the user to enter a task id
-                    // Remove task with id matching user input, from list
-                    tasks.remove(listConsole.promptForInteger("Which # task to delete?"));
+                    if (!tasks.isEmpty()){  // will only run if the list has tasks added
+                        System.out.println("*** REMOVE A TASK ***");
+                        boolean taskRemoved = false; // flag for successful operation
+                        while (!taskRemoved) {
+                            try {
+                                // Prompt the user to enter a task id
+                                // Remove task with id matching user input, from list
+                                int choice = listConsole.promptForInteger("Which # task to delete? Enter '0' to cancel");
+                                if (!(choice == -1)) {  // if the users choice returned 0 (-1), go back to the list menu
+                                    tasks.remove(choice);   // remove the task
+                                    taskRemoved = true;     // set the flag to true
+                                } else break;   // skips the "truthy" code and goes back to the list menu
+                            } catch (IndexOutOfBoundsException i) {
+                                System.out.println("The task does not exist...");
+                            }
+                        }
+                    } else {
+                        System.out.println("You have no tasks..."); // displayed if the list is empty
+                    }
                     // Should return to the top loop from here
                 }
                 case LIST_MENU_CHANGE_TITLE -> {
@@ -92,6 +107,6 @@ public class ToDoList {
         for (Task task : tasks) {
             System.out.println((tasks.indexOf(task) + 1) + ") " + task.getDescription());
         }
-
     }
+
 }

@@ -1,5 +1,16 @@
 # Taskmin Devlog/Changelog
 All notable changes to this to this project will be documented in this file.  
+## 3/1/2023
+### Added
+- flagging for if the Task list is empty and a user attempts to remove a task
+- flagging for if the user enters character output when prompted for a number
+- flagging for if the user accidently selects remove task, and an escape route
+- fixed IndexOutOfBounds issue
+  
+### Notes
+try/catch block in `CommandLine`  was not catching the  IndexOutOfBoundsException (IOOB), there was nothing to index. Instead changed it to a NumberFormatException to catch any character input. Added the IOOB to the Remove Task block. This caught the index issue, but presented an infinite loop issue if the user accidently chose to Remove a Task. Added a flag for successful task removal, and a clause for going back to the List Menu when the user enters `0` as a task to remove. Wrote code to skip the process if the list is empty.
+  
+***
 ## 2/27/2023
 ### Added
 - Add a task option successfully added
