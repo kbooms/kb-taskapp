@@ -1,5 +1,14 @@
 # Taskmin Devlog/Changelog
 All notable changes to this to this project will be documented in this file.  
+## 3/2/2023
+### Added
+- Added escape clause for Adding a task
+	+ if a user leaves the description prompt blank, no new task will be added to the list
+- Added change title function, and escape clause
+	+ if a user leaves the new title prompt blank, the title will not change
+- Added `helpMe()` option for main `App` class
+	+ called from `CommandLine` object, full output to be written
+***
 ## 3/1/2023
 ### Added
 - flagging for if the Task list is empty and a user attempts to remove a task

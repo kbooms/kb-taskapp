@@ -55,10 +55,12 @@ public class ToDoList {
                     System.out.println("\n*** ADD A TASK ***\n");
                     // Prompt the user to write out the task
                     String description = listConsole.promptForString("Please describe the task");
-                    // Create a new Task object with the id and description
-                    Task task = new Task(description);
-                    // Add task to the list
-                    tasks.add(task);
+                    if (!description.isBlank()) {
+                        // Create a new Task object with the id and description
+                        Task task = new Task(description);
+                        // Add task to the list
+                        tasks.add(task);
+                    }
                     // Should return to the top loop from here
                 }
                 case LIST_MENU_REMOVE_TASK -> {
@@ -86,7 +88,11 @@ public class ToDoList {
                 case LIST_MENU_CHANGE_TITLE -> {
                     System.out.println("*** CHANGE TITLE ***");
                     // Prompt the user to enter a new title for the list
+                    String newTitle = listConsole.promptForString("Please enter the new title...");
                     // use the setter to change the title of the list
+                    if (!newTitle.isBlank()) {
+                        setTitle(newTitle);
+                    }
                     // should return to the top loop from here
                 }
                 case LIST_MENU_SAVE_LIST -> {

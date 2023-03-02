@@ -47,6 +47,7 @@ public class App {
                 }
                 case MAIN_MENU_HELP -> {
                     System.out.println("*** HELP MENU ***");
+                    console.helpMe();
                 }
                 case MAIN_MENU_EXIT -> {
                     System.out.println("*** EXIT ***");

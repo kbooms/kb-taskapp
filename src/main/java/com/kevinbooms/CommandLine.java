@@ -24,18 +24,6 @@ public class CommandLine {
         System.out.println("    A lightweight rapid-fire task manager                        v0.5");
     }
 
-//    public String printGreeting() {
-//        return "Checking in!";
-//    }
-
-    public Object getChoiceFromOptions(Object[] options) {
-        Object choice = null;
-        while (choice == null) {
-            displayMenuOptions(options);
-            choice = getChoiceFromUserInput(options);
-        }
-        return choice;
-    }
 
     public Object getChoiceFromUserInput(Object[] options) {
         Object choice = null;
@@ -80,5 +68,19 @@ public class CommandLine {
             index = -2;
         }
         return index;
+    }
+
+    public Object getChoiceFromOptions(Object[] options) {
+        Object choice = null;
+        while (choice == null) {
+            displayMenuOptions(options);
+            choice = getChoiceFromUserInput(options);
+        }
+        return choice;
+    }
+
+    public void helpMe() {
+        System.out.println("Gotta write this out still...");
+        System.out.println();
     }
 }
