@@ -1,5 +1,12 @@
 # Taskmin Devlog/Changelog
 All notable changes to this to this project will be documented in this file.  
+## 3/4/2023
+### Added
+- Filled out `helpMe()` section
+	+ now accessible from main menu
+- Added `displayTagline()` method to separate out the banner
+	+ banner now redisplays in menus, tagline does not
+***
 ## 3/2/2023
 ### Added
 - Added escape clause for Adding a task

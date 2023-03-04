@@ -21,9 +21,11 @@ public class CommandLine {
         System.out.println("  _/    _/    _/  _/_/      _/_/      _/    _/    _/  _/  _/    _/   ");
         System.out.println(" _/    _/    _/      _/_/  _/  _/    _/    _/    _/  _/  _/    _/    ");
         System.out.println("_/      _/_/_/  _/_/_/    _/    _/  _/    _/    _/  _/  _/    _/     ");
-        System.out.println("    A lightweight rapid-fire task manager                        v0.5");
     }
 
+    public void displayTagline() {
+        System.out.println("    A lightweight rapid-fire task manager                        v0.5");
+    }
 
     public Object getChoiceFromUserInput(Object[] options) {
         Object choice = null;
@@ -80,7 +82,30 @@ public class CommandLine {
     }
 
     public void helpMe() {
-        System.out.println("Gotta write this out still...");
+        System.out.println("TASKMIN HELP");
+        System.out.println(" This application keeps and manages lists of tasks as .txt files");
         System.out.println();
+        System.out.println(" MAIN MENU:");
+        System.out.println("*Create NewList* Creates a new blank list with a title of the");
+        System.out.println(" user's choosing.");
+        System.out.println("*Load List* Enter the filename of the list to load.");
+        System.out.println(" lists are in .txt format");
+        System.out.println("*Help* You are here!");
+        System.out.println();
+        System.out.println(" LIST MENU:");
+        System.out.println("*Add Task* Write a new task and enter it on to the list.");
+        System.out.println(" Leaving title blank will cancel the process.");
+        System.out.println("*Remove Task* Enter the task number and it will be removed.");
+        System.out.println(" Entering 0 will cancel the process.");
+        System.out.println("*Change Title* Enter a new title to rename your list.");
+        System.out.println(" Leaving title blank will cancel the process.");
+        System.out.println("*Save List* Enter a file name and the list will be saved to");
+        System.out.println(" it in .txt format");
+        System.out.println();
+        System.out.println("Thank you for using Taskmin");
+        System.out.println("Questions or comments? Reach out to mrkbooms@gmail.com");
+        System.out.println();
+        System.out.println("Press ENTER to continue..");
+        in.nextLine();
     }
 }

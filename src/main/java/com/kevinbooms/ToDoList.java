@@ -90,7 +90,7 @@ public class ToDoList {
                     // Prompt the user to enter a new title for the list
                     String newTitle = listConsole.promptForString("Please enter the new title...");
                     // use the setter to change the title of the list
-                    if (!newTitle.isBlank()) {
+                    if (!newTitle.isBlank()) { // will only change the title if user entered a new title
                         setTitle(newTitle);
                     }
                     // should return to the top loop from here

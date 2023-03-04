@@ -24,6 +24,7 @@ public class App {
 
     public void run() throws InterruptedException {
         console.displayBanner();
+        console.displayTagline();
 
         while (true) { // begin main while loop
             /*  User must make a choice. The choices are presented as an array.
@@ -57,6 +58,7 @@ public class App {
                     System.out.println("*** not a valid option ***");
                 }
             }
+            console.displayBanner();
         } // end main while loop
     }
 
