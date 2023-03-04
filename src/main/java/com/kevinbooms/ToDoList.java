@@ -10,7 +10,7 @@ public class ToDoList {
     private static final String LIST_MENU_ADD_TASK = "Add Task";
     private static final String LIST_MENU_REMOVE_TASK = "Remove Task";
     private static final String LIST_MENU_CHANGE_TITLE = "Change Title";
-    private static final String LIST_MENU_SAVE_LIST = "Save List (not implemented)";
+    private static final String LIST_MENU_SAVE_LIST = "Save List";
     private static final String LIST_MENU_EXIT = "Exit";
     private static final String[] LIST_MENU_OPTIONS = { LIST_MENU_ADD_TASK,
                                                         LIST_MENU_REMOVE_TASK,
@@ -97,7 +97,9 @@ public class ToDoList {
                 }
                 case LIST_MENU_SAVE_LIST -> {
                     System.out.println("*** SAVE LIST ***");
-                    // to be implemented once FileManager class is in place
+                    FileManager fm = new FileManager();
+                    String fileName = listConsole.promptForString("Please enter a file name...");
+                    fm.saveFile(tasks, title, fileName);
                 }
                 case LIST_MENU_EXIT -> {
                     return; // return user to main menu

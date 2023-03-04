@@ -6,7 +6,53 @@ All notable changes to this to this project will be documented in this file.
 	+ now accessible from main menu
 - Added `displayTagline()` method to separate out the banner
 	+ banner now redisplays in menus, tagline does not
-***
+- Added `saveFile()` method. Saves as .txt format
+- Added `openFile()` method. Loads as .txt format
+### Notes
+The ** found in the .txt files is the Regex to denote to the program the title. There's probably a better way to do this, but I will explore that later. Decided on FileReader and PrintWriter, as performance isn't an issue, and in the end I do want to format the text. Ran into issue with FileReader populating a list when loading. It read the first line twice. After debugging I was able to get it to skip the first line  
+```
+// load the file and populate the list
+        try (Scanner loadFile = new Scanner(listFile)) {
+            while (loadFile.hasNextLine()) {
+                Task currentLine = new Task(loadFile.nextLine());
+                if (currentLine.toString().startsWith("**")) {}
+                else {
+                    tasks.add(currentLine);
+                }
+            }
+        } catch (FileNotFoundException f) {
+            System.err.println("File not found...");
+        }
+```
+After changing the code around to simply discard the first line after it's read and then continue parsing the file to a List. Then I added another open and close before it to set the title
+```
+// load the file and set the title, close it
+        try (Scanner loadFile = new Scanner(listFile)) {
+            String currentLine = loadFile.nextLine();
+            if (currentLine.startsWith("**")) {
+                title = currentLine.substring(3);
+                loadFile.close();
+            }
+        } catch (FileNotFoundException f) {
+            System.err.println("File not found...");
+        }
+
+        // load the file and populate the list
+        try (Scanner loadFile = new Scanner(listFile)) {
+            // read and discard the first line
+            if (loadFile.hasNextLine()) {
+                loadFile.nextLine();
+            }
+            while (loadFile.hasNextLine()) {
+                Task currentLine = new Task(loadFile.nextLine());
+                tasks.add(currentLine);
+                }
+        } catch (FileNotFoundException f) {
+            System.err.println("File not found...");
+        }
+```
+
+*** 
 ## 3/2/2023
 ### Added
 - Added escape clause for Adding a task

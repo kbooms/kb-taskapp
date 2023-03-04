@@ -44,7 +44,11 @@ public class App {
 
                 }
                 case MAIN_MENU_LOADLIST -> {
-                    System.out.println("LOAD A LIST");
+                    System.out.println();
+                    String filePath = console.promptForString("Please enter the file name?");
+                    FileManager fm = new FileManager();
+                    ToDoList toDoList = fm.openFile(filePath);
+                    toDoList.run();
                 }
                 case MAIN_MENU_HELP -> {
                     System.out.println("*** HELP MENU ***");
