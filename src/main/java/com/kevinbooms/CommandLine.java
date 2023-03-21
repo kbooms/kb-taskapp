@@ -24,7 +24,7 @@ public class CommandLine {
     }
 
     public void displayTagline() {
-        System.out.println("    A lightweight rapid-fire task manager                        v0.5");
+        System.out.println("    A lightweight rapid-fire task manager                        v1.0");
     }
 
     public Object getChoiceFromUserInput(Object[] options) {

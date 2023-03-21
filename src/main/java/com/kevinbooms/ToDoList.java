@@ -40,6 +40,14 @@ public class ToDoList {
         return tasks;
     }
 
+    private void showList() {
+        System.out.println("-------------------------");
+        System.out.println("| " + tasks.size() + " | " + getTitle());
+        System.out.println("-------------------------");
+        for (Task task : tasks) {
+            System.out.println((tasks.indexOf(task) + 1) + ") " + task.getDescription());
+        }
+    }
     public void run() {
         CommandLine listConsole = new CommandLine(System.in, System.out);
         while (true) { // begin list manager loop
@@ -107,14 +115,6 @@ public class ToDoList {
             }
 
         } // end list manager loop
-    }
-    private void showList() {
-        System.out.println("-------------------------");
-        System.out.println("| " + tasks.size() + " | " + getTitle());
-        System.out.println("-------------------------");
-        for (Task task : tasks) {
-            System.out.println((tasks.indexOf(task) + 1) + ") " + task.getDescription());
-        }
     }
 
 }

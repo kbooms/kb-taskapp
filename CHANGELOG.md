@@ -1,5 +1,14 @@
 # Taskmin Devlog/Changelog
 All notable changes to this to this project will be documented in this file.  
+## 3/20/2023
+### Added
+- Version 1.0 to tagline. I've manually tested the app as much as I can think to. I'm satisfied.
+- 
+### Removed
+- A lot of commented out test code.
+### Notes
+Rewrite tests for the classes. Compile the app and add it to the repo. ITF: Look into adding color and editing tasks with the setters.
+
 ## 3/4/2023
 ### Added
 - Filled out `helpMe()` section
