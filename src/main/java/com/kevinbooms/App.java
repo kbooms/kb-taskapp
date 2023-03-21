@@ -75,29 +75,5 @@ public class App {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-//        System.out.println(console.printGreeting());
-        // *** designing and testing an id generator sequence
-//        List<Task> tasks = new ArrayList<>();                // new list as sample Task list
-//        ToDoList list = new ToDoList("test", tasks);    // new sample ToDoList, incorporates sample list
-//        int idGen = tasks.size() + 1;                        // id generator prototype, +1 because of 0 indexing
-//        Task task = new Task(idGen, "testing id generator");    // shows an id of 1
-//        list.addTask(task);                                               // add the task to the list
-//        // each time a task is added to the list, the id generator sequence must be run again.
-//        // this can lead to duplicate id's as tasks are removed and added again. since it currently is only a tasklist,
-//        // it doesn't need id's at all. The numbering can be achieved with a simple for loop when printing out the list
-//        idGen = tasks.size() + 1;
-//        Task task1 = new Task(idGen, "testing id generator again");
-//        list.addTask(task1);
-//        System.out.println(list.getTasks());
-
-        // *** manually testing Task and ToDoList class ***
-//        Task taskOne = new Task(1, "The first task");
-//        Task taskTwo = new Task(2, "The next right thing to do.");
-//        ToDoList list = new ToDoList();
-//        list.addTask(taskOne);
-//        list.addTask(taskTwo);
-//
-//        System.out.println(list.getTasks().get(0).getDescription());
     }
 }

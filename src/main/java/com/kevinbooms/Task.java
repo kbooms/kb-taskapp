@@ -8,10 +8,6 @@ public class Task {
         this.description = description;
     }
 
-//    public Task() {
-//
-//    }
-
     public String getDescription() {
         return description;
     }
