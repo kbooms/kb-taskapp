@@ -1,9 +1,13 @@
 # Taskmin Devlog/Changelog
 All notable changes to this to this project will be documented in this file.  
+## 3/22/2023
+### Notes
+The compile was finally successful. Several plugins had to be installed to make the compile work. As well as setting a path variable to apache maven 3.9.1, and jdk-17. Apparently I still had my desktop set to adoptium 11.
+
 ## 3/20/2023
 ### Added
 - Version 1.0 to tagline. I've manually tested the app as much as I can think to. I'm satisfied.
-- 
+  
 ### Removed
 - A lot of commented out test code.
 ### Notes
