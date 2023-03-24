@@ -4,6 +4,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,8 +28,8 @@ public class FileManager {
                todoList.println(task.getDescription());
             }
             System.out.println("List saved as: " + filePath);
-        } catch (FileNotFoundException e) {
-            System.err.println("File not found");
+        } catch (FileNotFoundException e) { // I should rewrite this as a FileAlreadyExists, and ask the user if they want to overwrite
+            System.err.println("File not found..."); // if they don't want to overwrite, they'll have to go back to entering a file name
         }
     }
 
@@ -40,17 +41,14 @@ public class FileManager {
         // load the file and set the title, close it
         try (Scanner loadFile = new Scanner(listFile)) {
             String currentLine = loadFile.nextLine();
-            if (currentLine.startsWith("**")) {
-                title = currentLine.substring(3);
-                loadFile.close();
-            }
+            title = currentLine.substring(3);
         } catch (FileNotFoundException f) {
             System.err.println("File not found...");
         }
 
         // load the file and populate the list
         try (Scanner loadFile = new Scanner(listFile)) {
-            // read and discard the first line
+            // read and discard the first line, since this is the title
             if (loadFile.hasNextLine()) {
                 loadFile.nextLine();
             }
