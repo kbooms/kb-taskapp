@@ -8,7 +8,7 @@ import static java.lang.System.exit;
 public class App {
 
     private static final String MAIN_MENU_NEWLIST = "Create New List";
-    private static final String MAIN_MENU_LOADLIST = "Load List (not implemented)";
+    private static final String MAIN_MENU_LOADLIST = "Load List";
     private static final String MAIN_MENU_HELP = "Help";
     private static final String MAIN_MENU_EXIT = "Exit";
 
