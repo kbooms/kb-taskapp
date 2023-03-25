@@ -3,6 +3,14 @@
 
 I'm building a Terminal based task list application. I want to be able to run this at a command line or to be able to compile into it's own Terminal based application.  
 
+Feel free to clone and try the application yourself  
+1. To run the application open a Terminal window or Command Prompt  
+2. Verify that you're in the project root folder  
+3. Run the command `java -jar taskmin.jar`  
+
+If you need help enter `3` at the main menu  
+
+---
 ## Application Requirements
 1. The application creates numbered, editable task lists.
 2. The application saves and loads lists as/from text files (.txt)
