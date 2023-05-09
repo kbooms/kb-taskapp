@@ -60,9 +60,9 @@ public class ToDoList {
             // list handler methods
             switch (action) {
                 case LIST_MENU_ADD_TASK -> {
-                    System.out.println("\n*** ADD A TASK ***\n");
+                    System.out.println("\n *** ADD A TASK ***\n");
                     // Prompt the user to write out the task
-                    String description = listConsole.promptForString("Please describe the task");
+                    String description = listConsole.promptForString(" Please describe the task");
                     if (!description.isBlank()) {
                         // Create a new Task object with the id and description
                         Task task = new Task(description);
@@ -73,30 +73,30 @@ public class ToDoList {
                 }
                 case LIST_MENU_REMOVE_TASK -> {
                     if (!tasks.isEmpty()){  // will only run if the list has tasks added
-                        System.out.println("*** REMOVE A TASK ***");
+                        System.out.println(" *** REMOVE A TASK ***");
                         boolean taskRemoved = false; // flag for successful operation
                         while (!taskRemoved) {
                             try {
                                 // Prompt the user to enter a task id
                                 // Remove task with id matching user input, from list
-                                int choice = listConsole.promptForInteger("Which # task to delete? Enter '0' to cancel");
+                                int choice = listConsole.promptForInteger(" Which # task to delete? Enter '0' to cancel");
                                 if (!(choice == -1)) {  // if the users choice returned 0 (-1), go back to the list menu
                                     tasks.remove(choice);   // remove the task
                                     taskRemoved = true;     // set the flag to true
                                 } else break;   // skips the "truthy" code and goes back to the list menu
                             } catch (IndexOutOfBoundsException i) {
-                                System.out.println("The task does not exist...");
+                                System.out.println(" The task does not exist...");
                             }
                         }
                     } else {
-                        System.out.println("You have no tasks..."); // displayed if the list is empty
+                        System.out.println(" You have no tasks..."); // displayed if the list is empty
                     }
                     // Should return to the top loop from here
                 }
                 case LIST_MENU_CHANGE_TITLE -> {
-                    System.out.println("*** CHANGE TITLE ***");
+                    System.out.println(" *** CHANGE TITLE ***");
                     // Prompt the user to enter a new title for the list
-                    String newTitle = listConsole.promptForString("Please enter the new title...");
+                    String newTitle = listConsole.promptForString(" Please enter the new title...");
                     // use the setter to change the title of the list
                     if (!newTitle.isBlank()) { // will only change the title if user entered a new title
                         setTitle(newTitle);
@@ -104,9 +104,9 @@ public class ToDoList {
                     // should return to the top loop from here
                 }
                 case LIST_MENU_SAVE_LIST -> {
-                    System.out.println("*** SAVE LIST ***");
+                    System.out.println(" *** SAVE LIST ***");
                     FileManager fm = new FileManager();
-                    String fileName = listConsole.promptForString("Please enter a file name...");
+                    String fileName = listConsole.promptForString(" Please enter a file name...");
                     fm.saveFile(tasks, title, fileName);
                 }
                 case LIST_MENU_EXIT -> {

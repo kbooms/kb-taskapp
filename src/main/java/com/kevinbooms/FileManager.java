@@ -27,9 +27,9 @@ public class FileManager {
             for (Task task : tasks) {
                todoList.println(task.getDescription());
             }
-            System.out.println("List saved as: " + filePath);
+            System.out.println(" List saved as: " + filePath);
         } catch (FileNotFoundException e) { // I should rewrite this as a FileAlreadyExists, and ask the user if they want to overwrite
-            System.err.println("File not found..."); // if they don't want to overwrite, they'll have to go back to entering a file name
+            System.err.println(" File not found..."); // if they don't want to overwrite, they'll have to go back to entering a file name
         }
     }
 
@@ -43,7 +43,7 @@ public class FileManager {
             String currentLine = loadFile.nextLine();
             title = currentLine.substring(3);
         } catch (FileNotFoundException f) {
-            System.err.println("File not found...");
+            System.err.println(" File not found...");
         }
 
         // load the file and populate the list
@@ -57,7 +57,7 @@ public class FileManager {
                 tasks.add(currentLine);
                 }
         } catch (FileNotFoundException f) {
-            System.err.println("File not found...");
+            System.err.println(" File not found...");
         }
         return new ToDoList(title, tasks);
     }

@@ -37,7 +37,7 @@ public class App {
             switch (choice) {
                 case MAIN_MENU_NEWLIST -> { // a new list is created
                     System.out.println();
-                    String title = console.promptForString("Set a title for the list?");
+                    String title = console.promptForString(" Set a title for the list?");
                     List<Task> tasks = new ArrayList<>();
                     ToDoList toDoList = new ToDoList(title, tasks);
                     toDoList.run();
@@ -45,21 +45,21 @@ public class App {
                 }
                 case MAIN_MENU_LOADLIST -> {
                     System.out.println();
-                    String filePath = console.promptForString("Please enter the file name?");
+                    String filePath = console.promptForString(" Please enter the file name?");
                     FileManager fm = new FileManager();
                     ToDoList toDoList = fm.openFile(filePath);
                     toDoList.run();
                 }
                 case MAIN_MENU_HELP -> {
-                    System.out.println("*** HELP MENU ***");
+                    System.out.println(" *** HELP MENU ***");
                     console.helpMe();
                 }
                 case MAIN_MENU_EXIT -> {
-                    System.out.println("*** EXIT ***");
+                    System.out.println(" *** EXIT ***");
                     exit(0);
                 }
                 default -> {
-                    System.out.println("*** not a valid option ***");
+                    System.out.println(" *** not a valid option ***");
                 }
             }
             console.displayBanner();
